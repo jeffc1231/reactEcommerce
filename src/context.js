@@ -28,8 +28,8 @@ handleDetail = () => {
     console.log('hello from detail');
 };
 
-addToCart= () => {
-    console.log('hello from handle add to cart');
+addToCart= (id) => {
+    console.log(`hello from handle add to cart. id is:${id}`);
 };
   render() {
     return (
