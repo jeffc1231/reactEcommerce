@@ -86,6 +86,14 @@ clearCart = () => {
     console.log('cart was cleared');
     
 }
+clearCart = () => {
+    this.setState(() => {
+        return {cart:[]}
+    }, () => {
+        this.setProducts();
+        this.addTotals();
+    });
+};
 addTotals = () => {
     let subTotal = 0;
     this.state.cart.map(item =>(subTotal += item.total));
@@ -97,9 +105,9 @@ addTotals = () => {
             cartSubTotal:subTotal,
             cartTax:tax,
             cartTotal:total
-        }
-    })
-}
+        };
+    });
+};
   render() {
     return (
       <ProductContext.Provider value={{
